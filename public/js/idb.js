@@ -15,7 +15,7 @@ request.onerror = (event) => {
     console.log(event.target.errorCode)
 }
 
-const addTransaction = (money) => {
+function saveRecord(money) {
     const transaction = db.transaction('transactions', 'readWrite')
     const transactionStore = transaction.objectStore('transactions')
     transactionStore.add(money)
